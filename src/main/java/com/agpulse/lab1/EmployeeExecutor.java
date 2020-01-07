@@ -1,6 +1,6 @@
 package com.agpulse.lab1;
 
-public class EmployeeExecuter {
+public class EmployeeExecutor {
     public static void main(String[] args) {
         EmployeeBuilderService employeeWorkingExample = new EmployeeBuilderImpl();
         EmployeeBuilderService employeeMissingFieldExample = new EmployeeBuilderImpl();
@@ -12,8 +12,9 @@ public class EmployeeExecuter {
             System.out.println("Not working example:");
             employeeMissingFieldExample.withAge(23).withName("Mendel").withSalary(10000).withBonus(1000).build();
             System.out.println(employeeMissingFieldExample.toString());
-        } catch (EmployeeException e){
-            e.printStackTrace();
+        } catch (EmployeeException e) {
+            System.out.println("Error:");
+            System.out.println(e.getMessage());
         }
     }
 }
